@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "NES Discrete Mapper Cart PCB")
-		(date "2025-06-10")
-		(rev "1.0")
+		(date "2025-10-20")
+		(rev "1.1")
 		(company "https://github.com/MouseBiteLabs/NES-Cartridges")
 		(comment 1 "Note 5: Only populate ONE latching IC - U4A, U4B, or U4C. Do not populate all of them.")
 		(comment 2 "Note 4: Bridge if using 27C040 or 27C080.")
