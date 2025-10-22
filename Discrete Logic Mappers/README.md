@@ -76,7 +76,49 @@ This board is highly customizable. You *do not* need every single part on this b
 
 ### Solder Jumpers
 
-asdfadsfasdf
+This board is rife with solder jumpers. Sorry! That's the cost of making a single board that can cover many different configurations. Not all jumpers need to be soldered, depending on the game you're making. Again, <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Discrete-Mapper">**I highly recommend checking out the various examples of board configurations on the wiki.**</a> That will give you a shortcut for most solder jumpers, other than the mirroring jumpers, which are detailed in this next section.
+
+On the back of the board, you will see a legend for decoding what jumpers need to be soldered (this legend also tells you if you need ROM or RAM for the CHR component):
+
+<img width="514" height="255" alt="image" src="https://github.com/user-attachments/assets/56e21019-0c04-4c8b-9df4-ffb482946437" />
+
+Basically, follow this for your selected mapper. Anywhere you see "A" next to a jumper, bridge it with solder for AxROM games; for BNROM, look for "B"; etc. The exception to this is NROM - this requires no solder jumpers to be soldered, except for the mirroring jumper and the ROM /OE jumpers on the front of the board (indicated by "OTHERS").
+
+#### ROM /OE Selection Jumpers
+
+On the bottom right-hand side of the front of the board, you will see two sets of two-way jumpers:
+
+<img width="299" height="93" alt="image" src="https://github.com/user-attachments/assets/6bca3179-8b50-4c50-b159-78a4944cffe5" />
+
+The "OTHERS" in this case refers to "other" mappers other than AxROM or UxROM (including NROM). 
+
+Solder them like this for AxROM games:
+
+<img width="307" height="99" alt="image" src="https://github.com/user-attachments/assets/d4a13e49-648e-4ccd-8908-dafab7f10a2c" />
+
+And this for UxROM games:
+
+<img width="309" height="100" alt="image" src="https://github.com/user-attachments/assets/ff4e0145-d8e7-4e30-93e9-cc9214133fb1" />
+
+And this for all other mappers:
+
+<img width="299" height="93" alt="image" src="https://github.com/user-attachments/assets/7c0cfe94-d1c3-462e-ba83-07599725359e" />
+
+### Mirroring Jumpers
+
+These jumpers need to be set for every game EXCEPT for AxROM games (AMROM, ANROM, AN1ROM, and AOROM) which require you to NOT solder these pads. If you do not set these pads properly for non-AxROM games, you will experience graphical issues. If after you make a game and you *are* experience graphical issues, but gameplay still works, then it might be that you set these pads wrong.
+
+<img width="425" height="105" alt="image" src="https://github.com/user-attachments/assets/f495c735-7884-47c4-b046-8660ee068418" />
+
+Each non-AxROM game needs to be set for Horizontal (V) or Vertical (H) mirroring. Yes, I know the letters are flipped, and there is a reason for that, but I'm not going to spend time explaining the details behind it. The main thing you need to know is that if you're making a game and you use the FamiROM tool (that is explained in the <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Preparing-the-ROM">ROM preparation section</a> of the wiki), it will report the ROM information on the box that pops up. Check the "mirroring" value. In this example, Elevator Action, it reports the mirroring as Horizontal.
+
+<img width="362" height="318" alt="image" src="https://github.com/user-attachments/assets/fb2811ca-d03f-4723-b681-8aef23669d60" />
+
+Now, check out the PCB (curtousey of NesCartDB):
+
+<img width="700" height="292" alt="image" src="https://github.com/user-attachments/assets/dba73201-895c-4de0-8f3d-f2d9ba258b9e" />
+
+See that the "V" pads are bridged. This is why my board shows both the nomenclature FamiROM reports and the letter that appears on the original PCB for the games.
 
 ### Selecting U4
 
@@ -86,6 +128,18 @@ If you use the 74HCT377, you can achieve an "expanded" version of CNROM, UxROM, 
 
 If you want an easy option to cover all your bases without having to think too hard about what chip to use, I recommend simply populating U4A (74HCT377).
 
+### PRG ROM Considerations
+
+I use the 39SF040 NOR Flash chips for all my ROM needs - they're new, easily available, and cover all your bases for NES games - but there are plenty of other options that can be used, like the 27C UV EPROMs (27C256, 27C512, 27C010, 27C020, 27C040, and 27C080). Whatever chip you select, it must be large enough to hold your ROM file (again, see the <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Preparing-the-ROM">ROM preparation section</a> of the wiki). 
+
+If you use the 27C040 or 27C080, then you need to solder these pads on the back:
+
+<img width="378" height="390" alt="image" src="https://github.com/user-attachments/assets/05cf0442-3288-472b-af4b-4c99ec936df4" />
+
+And if your ROM chip is only 28 pins (like 27C256 and 27C512) you need to bend out pin 28 and solder it to the alternate hole labeled DIP28, shown here:
+
+<img width="342" height="189" alt="image" src="https://github.com/user-attachments/assets/cc72bd8f-c0ff-49fc-848a-6b38212540eb" />
+
 ### Special Mapper Types
 
 There are a few special cases for a few obscure mapper types that this board supports:
@@ -93,6 +147,8 @@ There are a few special cases for a few obscure mapper types that this board sup
 - To achieve Mapper 180, follow instructions for a UxROM board type, but replace the 74'32 with a 74'08. See the BOM for more information.
 - To achieve Mapper 87, follow instructions for a CNROM board type, but you must use U4A with pins 5 and 6 bent out to solder to the adjacent pins from the U4B footprint.
 - To achieve Mapper 79 or 148, follow instructions for a CNROM board type, but you must use U4B with pin 11 bent inward under the part footprint to solder to the test point.
+
+Once again, again, <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Discrete-Mapper">**I highly recommend checking out the various examples of board configurations on the wiki**</a> where this is also covered.
 
 ## Troubleshooting
 
