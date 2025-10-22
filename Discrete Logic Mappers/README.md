@@ -74,11 +74,25 @@ This board is highly customizable. You *do not* need every single part on this b
 
 <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Discrete-Mapper">**I highly recommend checking out the various examples of board configurations on the wiki.**</a>
 
+### Solder Jumpers
+
+asdfadsfasdf
+
 ### Selecting U4
+
+U4 is the main mapping chip for all mappers except NROM (which does not need one). U4B and U4C are 74'161 that have four sets of I/O, and U4A is the 74'377 which has eight. These I/O are connected to the data pins (D0-D7). If you're making a CNROM or UxROM game, you can use a 74'161 in the U4B socket; if you're making AxROM or BNROM, you can use a 74'161 in the U4C socket.
+
+If you use the 74HCT377, you can achieve an "expanded" version of CNROM, UxROM, AxROM, and BNROM. This expanded memory has no functionality for games that do not use it - this feature is more for developers to take advantage of. One exception to this is Panesian games - these utilize the expanded CNROM mapper type, and therefore require the 74'377.
+
+If you want an easy option to cover all your bases without having to think too hard about what chip to use, I recommend simply populating U4A (74HCT377).
 
 ### Special Mapper Types
 
-### Solder Jumpers
+There are a few special cases for a few obscure mapper types that this board supports:
+- For making Panesian games, follow instructions for a CNROM board type, but you must use U4A.
+- To achieve Mapper 180, follow instructions for a UxROM board type, but replace the 74'32 with a 74'08. See the BOM for more information.
+- To achieve Mapper 87, follow instructions for a CNROM board type, but you must use U4A with pins 5 and 6 bent out to solder to the adjacent pins from the U4B footprint.
+- To achieve Mapper 79 or 148, follow instructions for a CNROM board type, but you must use U4B with pin 11 bent inward under the part footprint to solder to the test point.
 
 ## Troubleshooting
 
