@@ -278,7 +278,7 @@ These extra parts are required for GNROM games:
 
 ### v1.1 - Release
 
-- Added pad for using 28-pin PRG EPROMs.
+- Added pad for using 27C040 and 27C080 PRG EPROMs.
 - Fixed Mapper 079/148 instructions and added extra test point for proper configuration.
 
 ### v1.0 - Prototype
