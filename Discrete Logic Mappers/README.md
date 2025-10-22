@@ -114,7 +114,7 @@ Each non-AxROM game needs to be set for Horizontal (V) or Vertical (H) mirroring
 
 <img width="362" height="318" alt="image" src="https://github.com/user-attachments/assets/fb2811ca-d03f-4723-b681-8aef23669d60" />
 
-Now, check out the PCB (curtousey of NesCartDB):
+Now, check out the PCB (courtesy of NesCartDB):
 
 <img width="700" height="292" alt="image" src="https://github.com/user-attachments/assets/dba73201-895c-4de0-8f3d-f2d9ba258b9e" />
 
@@ -286,6 +286,7 @@ These extra parts are required for GNROM games:
 ## Acknowledgements and Resources
 
 - The <a href="https://www.nesdev.org/wiki/Nesdev_Wiki">Nesdev wiki</a> was *indispensible* for making this board, especially <a href="https://www.nesdev.org/wiki/User:Lidnariq/Discrete_Logic_Table">this specific page</a> by lidnariq.
+- <a href="https://nescartdb.com/">NesCartDB</a> has a wealth of images and information about the vast majority of the NES library. I've used it for years, it helped me create these boards, and I suggest you do too for referencing specific games.
 - Continual thanks to all in the nesdev community for their resources, design tips, and support throughout the past half-decade.
 
 ## License
