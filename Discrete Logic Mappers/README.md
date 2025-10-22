@@ -274,6 +274,18 @@ These extra parts are required for GNROM games:
 | C3        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
 | C4A       | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
 
+## Sprite Glitch Resistors
+
+In rare cases, you might encounter some sprite glitching even if everything is configured properly. This usually only happens when you have things like a Famicom-NES adapter or Game Genie in your system that artificially lengthen the connections from the cartridge to the console. It also can depend on the type of console you're using. What sets this aside from other graphical glitches is that it affects the sprites, not the entire screen. So if you’re getting strange palettes, missing backgrounds, or weird tiles, your problem is something else, probably a bad cartridge connector or dirty cartridge edge. What you’ll see if you’re getting this kind of error, known as OAM corruption, looks something like this (click the picture to view a video):
+
+[![OAM Corruption](https://github.com/user-attachments/assets/a6f166f7-e0b2-4c95-8aa0-edd110ba0b96)](https://www.youtube.com/watch?v=ni1QUTt-jNI "OAM Corruption")
+
+Fixing this error involves adding ~100 ohm resistors (like these: https://mou.sr/4o1seJo) in series with the PRG D0 to D7 lines. This can be done by cutting the exposed traces in the middle of RD0 to RD7 with a blade, and soldering resistors in place (surface mount size 0603). Be careful not to cut other parts of the board (or yourself).
+
+(These pictures are from another board, but they are present on this board as well.)
+
+<img width="1652" height="728" alt="image" src="https://github.com/user-attachments/assets/18f7d2b8-eba8-4c1b-81b5-3a025fba5d4c" />
+
 ## Revision History
 
 ### v1.1 - Release
