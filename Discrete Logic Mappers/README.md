@@ -122,7 +122,7 @@ See that the "V" pads are bridged. This is why my board shows both the nomenclat
 
 ### Selecting U4
 
-U4 is the main mapping chip for all mappers except NROM (which does not need one). U4B and U4C are 74'161 that have four sets of I/O, and U4A is the 74'377 which has eight. These I/O are connected to the data pins (D0-D7). If you're making a CNROM or UxROM game, you can use a 74'161 in the U4B socket; if you're making AxROM or BNROM, you can use a 74'161 in the U4C socket.
+U4 is the main mapping chip for all board types except NROM (which does not need one). U4B and U4C are 74'161 that have four sets of I/O, and U4A is the 74'377 which has eight. These I/O are connected to the data pins (D0-D7). If you're making a CNROM or UxROM game, you can use a 74'161 in the U4B socket; if you're making AxROM or BNROM, you can use a 74'161 in the U4C socket.
 
 If you use the 74HCT377, you can achieve an "expanded" version of CNROM, UxROM, AxROM, and BNROM. This expanded memory has no functionality for games that do not use it - this feature is more for developers to take advantage of. One exception to this is Panesian games - these utilize the expanded CNROM mapper type, and therefore require the 74'377.
 
