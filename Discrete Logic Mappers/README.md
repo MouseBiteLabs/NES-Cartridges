@@ -74,6 +74,10 @@ This board is highly customizable. You *do not* need every single part on this b
 
 <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Discrete-Mapper">**I highly recommend checking out the various examples of board configurations on the wiki.**</a>
 
+### Selecting U4
+
+### Special Mapper Types
+
 ### Solder Jumpers
 
 ## Troubleshooting
@@ -82,7 +86,123 @@ This board is highly customizable. You *do not* need every single part on this b
 
 ## Bill of Materials (BOM)
 
-The component groups required for the build you want to make are detailed above.
+NOTE 1: The 39SF040 is listed as the recommended part for all of the following BOMs - it will cover any and all games, but you can also use the following chips if they are big enough for the game file you have:
+- UV EPROM: 27C256, 27C512, 27C010, 27C020, 27C040, 27C080
+- NOR Flash: 39SF512, 39SF010, 39SF020 
+
+NOTE 2: The AS6C6264 is recommended for the CHR RAM for boards that require it, but the AS6C62256 also works.
+
+All games will require the following parts:
+
+| Reference | Value/Part Number | Package        | Description                     | Source                                           |
+| --------- | ----------------- | -------------- | ------------------------------- | ------------------------------------------------ |
+| U1 \*     | CIC / ATTINY13  | DIP-16 / DIP-8 | Region Lockout Chip             | [https://mou.sr/4h4SnUi](https://mou.sr/4h4SnUi) |
+| U2        | 39SF040        | DIP-32         | PRG ROM                         | [https://mou.sr/47odNbz](https://mou.sr/47odNbz) |
+| CC        | 22uF              | 5mm x 5mm      | Aluminum Electrolytic Capacitor | [https://mou.sr/4moiXKK](https://mou.sr/4moiXKK) |
+| C1        | 0.1uF             | Radial, 5mm    | Capacitor (MLCC)                | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C2        | 0.1uF             | Radial, 5mm    | Capacitor (MLCC)                | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| R8        | 100k              | Axial, 3.3mm   | Resistor                        | [https://mou.sr/3NOD0De](https://mou.sr/3NOD0De) |
+
+\* This can be harvested from an original NES game (this is not needed if you have region modded your NES)
+
+### NROM
+
+These extra parts are required for NROM games:
+
+| Reference | Value/Part Number | Package     | Description      | Source                                           |
+| --------- | ----------------- | ----------- | ---------------- | ------------------------------------------------ |
+| U3        | 39SF040           | DIP-32      | CHR ROM          | [https://mou.sr/47odNbz](https://mou.sr/47odNbz) |
+| C3        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+
+### UxROM
+
+These extra parts are required for UNROM and UOROM games:
+
+| Reference | Value/Part Number | Package     | Description      | Source                                           |
+| --------- | ----------------- | ----------- | ---------------- | ------------------------------------------------ |
+| U3        | AS6C6264          | DIP-28      | CHR RAM          | [https://mou.sr/3KQ1Tv5](https://mou.sr/3KQ1Tv5) |
+| U4A \*    | 74HCT377          | DIP-20      | Octal Flip-Flop  | [https://mou.sr/4ozFyER](https://mou.sr/4ozFyER) |
+| U4B \*    | 74HCT161          | DIP-16      | Binary Counter   | [https://mou.sr/4qlCT3n](https://mou.sr/4qlCT3n) |
+| U5        | 74HCT32           | DIP-14      | Quad 2-in OR     | [https://mou.sr/471nOwi](https://mou.sr/471nOwi) |
+| C3        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4A \*    | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4B \*    | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C5        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+
+\* Use either U4A/C4A *OR* U4B/C4B. Do not use both!
+
+Special note: For Mapper 180, replace U5 with 74HCT08 ([https://mou.sr/3AM08eK](https://mou.sr/3AM08eK))
+
+### CNROM
+
+These extra parts are required for CNROM games:
+
+| Reference | Value/Part Number | Package     | Description      | Source                                           |
+| --------- | ----------------- | ----------- | ---------------- | ------------------------------------------------ |
+| U3        | 39SF040           | DIP-32      | CHR ROM          | [https://mou.sr/47odNbz](https://mou.sr/47odNbz) |
+| U4A \*    | 74HCT377          | DIP-20      | Octal Flip-Flop  | [https://mou.sr/4ozFyER](https://mou.sr/4ozFyER) |
+| U4B \*    | 74HCT161          | DIP-16      | Binary Counter   | [https://mou.sr/4qlCT3n](https://mou.sr/4qlCT3n) |
+| C3        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4A \*    | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4B \*    | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+
+\* Use either U4A/C4A *OR* U4B/C4B. Do not use both!
+
+Special note: Panesian and Mapper 87 games require U4A/C4A, Mapper 79 and 149 games require U4B/C4B.
+
+### AxROM
+
+These extra parts are required for AMROM, ANROM, AN1ROM, and AOROM games:
+
+| Reference | Value/Part Number | Package     | Description      | Source                                           |
+| --------- | ----------------- | ----------- | ---------------- | ------------------------------------------------ |
+| U3        | AS6C6264          | DIP-28      | CHR RAM          | [https://mou.sr/3KQ1Tv5](https://mou.sr/3KQ1Tv5) |
+| U4A \*    | 74HCT377          | DIP-20      | Octal Flip-Flop  | [https://mou.sr/4ozFyER](https://mou.sr/4ozFyER) |
+| U4C \*    | 74HCT161          | DIP-16      | Binary Counter   | [https://mou.sr/4qlCT3n](https://mou.sr/4qlCT3n) |
+| U6        | 74HCT02           | DIP-14      | Quad 2-in NOR    | [https://mou.sr/4qo4i4z](https://mou.sr/4qo4i4z) |
+| C3        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4A \*    | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4C \*    | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C6        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+
+\* Use either U4A/C4A *OR* U4C/C4C. Do not use both!
+
+### Color Dreams
+
+These extra parts are required for Color Dreams games:
+
+| Reference | Value/Part Number | Package     | Description      | Source                                           |
+| --------- | ----------------- | ----------- | ---------------- | ------------------------------------------------ |
+| U3        | 39SF040           | DIP-32      | CHR ROM          | [https://mou.sr/47odNbz](https://mou.sr/47odNbz) |
+| U4A       | 74HCT377          | DIP-20      | Octal Flip-Flop  | [https://mou.sr/4ozFyER](https://mou.sr/4ozFyER) |
+| C3        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4A       | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+
+### BNROM
+
+These extra parts are required for BNROM games:
+
+| Reference | Value/Part Number | Package     | Description      | Source                                           |
+| --------- | ----------------- | ----------- | ---------------- | ------------------------------------------------ |
+| U3        | AS6C6264          | DIP-28      | CHR RAM          | [https://mou.sr/3KQ1Tv5](https://mou.sr/3KQ1Tv5) |
+| U4A \*    | 74HCT377          | DIP-20      | Octal Flip-Flop  | [https://mou.sr/4ozFyER](https://mou.sr/4ozFyER) |
+| U4C \*    | 74HCT161          | DIP-16      | Binary Counter   | [https://mou.sr/4qlCT3n](https://mou.sr/4qlCT3n) |
+| C3        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4A \*    | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4C \*    | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+
+\* Use either U4A/C4A *OR* U4C/C4C. Do not use both!
+
+### GNROM
+
+These extra parts are required for GNROM games:
+
+| Reference | Value/Part Number | Package     | Description      | Source                                           |
+| --------- | ----------------- | ----------- | ---------------- | ------------------------------------------------ |
+| U3        | 39SF040           | DIP-32      | CHR ROM          | [https://mou.sr/47odNbz](https://mou.sr/47odNbz) |
+| U4A       | 74HCT377          | DIP-20      | Octal Flip-Flop  | [https://mou.sr/4ozFyER](https://mou.sr/4ozFyER) |
+| C3        | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
+| C4A       | 0.1uF             | Radial, 5mm | Capacitor (MLCC) | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
 
 ## Revision History
 
