@@ -66,7 +66,7 @@ You can use the zipped folder at any board fabricator you like. You may also buy
 
 ## How to Program
 
-<a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Preparing-the-ROM">Please check out the wiki pages on how to prepare the ROM and program the cartridge.</a>
+<a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Programming-the-ROM-chips">Please check out the wiki pages on how to prepare the ROM and program the cartridge.</a>
 
 ## Board Configurations
 
@@ -110,7 +110,7 @@ These jumpers need to be set for every game EXCEPT for AxROM games (AMROM, ANROM
 
 <img width="425" height="105" alt="image" src="https://github.com/user-attachments/assets/f495c735-7884-47c4-b046-8660ee068418" />
 
-Each non-AxROM game needs to be set for Horizontal (V) or Vertical (H) mirroring. Yes, I know the letters are flipped, and there is a reason for that, but I'm not going to spend time explaining the details behind it. The main thing you need to know is that if you're making a game and you use the FamiROM tool (that is explained in the <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Preparing-the-ROM">ROM preparation section</a> of the wiki), it will report the ROM information on the box that pops up. Check the "mirroring" value. In this example, Elevator Action, it reports the mirroring as Horizontal.
+Each non-AxROM game needs to be set for Horizontal (V) or Vertical (H) mirroring. Yes, I know the letters are flipped, and there is a reason for that, but I'm not going to spend time explaining the details behind it. The main thing you need to know is that if you're making a game and you use the FamiROM tool (that is explained in the <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Programming-the-ROM-chips">ROM preparation section</a> of the wiki), it will report the ROM information on the box that pops up. Check the "mirroring" value. In this example, Elevator Action, it reports the mirroring as Horizontal.
 
 <img width="362" height="318" alt="image" src="https://github.com/user-attachments/assets/fb2811ca-d03f-4723-b681-8aef23669d60" />
 
@@ -130,7 +130,7 @@ If you want an easy option to cover all your bases without having to think too h
 
 ### PRG ROM Considerations
 
-I use the 39SF040 NOR Flash chips for all my ROM needs - they're new, easily available, and cover all your bases for NES games - but there are plenty of other options that can be used, like the 27C UV EPROMs (27C256, 27C512, 27C010, 27C020, 27C040, and 27C080). Whatever chip you select, it must be large enough to hold your ROM file (again, see the <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Preparing-the-ROM">ROM preparation section</a> of the wiki). 
+I use the 39SF040 NOR Flash chips for all my ROM needs - they're new, easily available, and cover all your bases for NES games - but there are plenty of other options that can be used, like the 27C UV EPROMs (27C256, 27C512, 27C010, 27C020, 27C040, and 27C080). Whatever chip you select, it must be large enough to hold your ROM file (again, see the <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Programming-the-ROM-chips">ROM preparation section</a> of the wiki). 
 
 If you use the 27C040 or 27C080, then you need to solder these pads on the back:
 
