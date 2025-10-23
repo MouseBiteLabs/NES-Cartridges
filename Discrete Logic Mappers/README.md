@@ -64,9 +64,11 @@ You can use the zipped folder at any board fabricator you like. You may also buy
 - You need a way to program the ROM chip(s). For NES games, I usually use the <a href="https://xgecu.myshopify.com/products/xgecu-new-t48-tl866-3gprogrammer-v12-01-support-28000-ics-for-spi-nor-nand-flash-emmc-bga153-162-169-100-221-tsop-sop-plcc">T48 programmer</a>.
 - If you do not have an original CIC to transfer to this board, or a region unlock mod on your console, you will need an ATTINY13 with the <a href="http://forums.nesdev.com/download/file.php?id=5943">AVRCIC code by krikzz</a> to fake out the lockout chip. You will need a way to program these chips. I use the T48 to do so, but you can also use something like the <a href="https://www.microchip.com/en-us/development-tool/pg164130">PICkit 3.</a> Be sure to see <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Programming-the-CIC">the tutorial on how to program these lockout chips,</a> as you need to change a few settings before programming the code.
 
-## How to Program
+## How to Program the Game and CIC
 
-<a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Programming-the-ROM-chips">Please check out the wiki pages on how to prepare the ROM and program the cartridge.</a>
+For a tutorial on how to prepare and program the ROM file(s), <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Programming-the-ROM-chips">please check out this wiki page.</a>
+
+For a tutorial on how to program the CIC code onto the ATTINY13 if you do not have an original CIC to use, <a href="https://github.com/MouseBiteLabs/NES-Cartridges/wiki/Programming-the-CIC">please check out this wiki page.</a>
 
 ## Board Configurations
 
