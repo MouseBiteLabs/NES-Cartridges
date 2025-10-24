@@ -54,9 +54,7 @@ The zipped folder contains all the gerber files for this board. The following op
 
 You can use the zipped folder at any board fabricator you like. You may also buy the board from PCBWay using this link (disclosure: I receive 10% of the sale value to go towards future PCB orders of my own):
 
-(NOT YET LIVE)
-
-<a href="https://www.pcbway.com/"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
+<a href="https://www.pcbway.com/project/shareproject/Nintendo_Entertainment_System_NES_Discrete_Mapper_PCB_1d9f0e3d.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
 ## Required Equipment
 
