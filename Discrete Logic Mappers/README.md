@@ -5,7 +5,6 @@ This is an updated design of my old <a href="https://mousebitelabs.com/2020/09/1
 ![mage](https://github.com/user-attachments/assets/f5ad6fda-808d-47ae-aa16-ad9cfb6507dc)
 ![mage](https://github.com/user-attachments/assets/2e692194-2ee1-4457-96f9-8d83b99148e9)
 
-
 This circuit board can be used to make most NES cartridges that rely on discrete logic chips to operate. These boards are most common in the earlier NES releases. The following mapper types are supported (click the link to view the games that use that specific mapper):
 
 | Board        | Mapper | Example Game                  | Database Link                                                                                  |
@@ -27,6 +26,12 @@ There are a handful of more obscure mappers supported as well:
 | JF-xx            | 87     | The Goonies (JPN)   | https://www.nesdev.org/wiki/INES_Mapper_087                                                |
 | SA-008-A, 800008 | 148    | Tetris (Tengen)     | [https://www.nesdev.org/wiki/INES_Mapper_148](https://www.nesdev.org/wiki/INES_Mapper_148) |
 | UNROM (Modified) | 180    | Crazy Climber (JPN) | [https://www.nesdev.org/wiki/INES_Mapper_180](https://www.nesdev.org/wiki/INES_Mapper_180) |
+
+## For Replacing Damaged Circuit Boards
+
+This board can be used as a drop-in replacement for damaged original NES cartridge circuit boards - **but only for NROM and CNROM games**. This means you can take the chips off of the damaged circuit boards (assuming the chips are still in good condition) and solder them into this board. You may need to replace the capacitors if they are damaged.
+
+If you wish to use this board to replace damaged circuit boards for other mapper types (such as AxROM or UxROM), you can transfer over the logic chips and CIC, but will need to do some manual rewiring of the Mask ROM chips, which I will not be detailing in this repository. <a href="https://www.nesdev.org/wiki/Mask_ROM_pinout">Refer to this page on the Nesdev wiki</a> and cross-reference with <a href="https://github.com/MouseBiteLabs/NES-Cartridges/blob/main/Discrete%20Logic%20Mappers/schematic.pdf">board schematic</a> if you wish to figure it out for yourself. It will involve bending specific pins on the Mask ROM up so they are not inserted into the sockets on the board to be rewired elsewhere.
 
 ## Important Things Before You Start
 
@@ -171,9 +176,10 @@ All games will require the following parts:
 | CC        | 22uF              | 5mm x 5mm      | Aluminum Electrolytic Capacitor | [https://mou.sr/4moiXKK](https://mou.sr/4moiXKK) |
 | C1        | 0.1uF             | Radial, 5mm    | Capacitor (MLCC)                | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
 | C2        | 0.1uF             | Radial, 5mm    | Capacitor (MLCC)                | [https://mou.sr/4mvAwIR](https://mou.sr/4mvAwIR) |
-| R8        | 100k              | Axial, 3.3mm   | Resistor                        | [https://mou.sr/3NOD0De](https://mou.sr/3NOD0De) |
+| R8 \*\*   | 100k              | Axial, 3.3mm   | Resistor                        | [https://mou.sr/3NOD0De](https://mou.sr/3NOD0De) |
 
 \* This can be harvested from an original NES game (this is not needed if you have region modded your NES)
+\*\* Not needed if U2 is a 28-pin UV EPROM.
 
 ### NROM
 
