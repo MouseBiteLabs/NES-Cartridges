@@ -179,6 +179,7 @@ All games will require the following parts:
 | R8 \*\*   | 100k              | Axial, 3.3mm   | Resistor                        | [https://mou.sr/3NOD0De](https://mou.sr/3NOD0De) |
 
 \* This can be harvested from an original NES game (this is not needed if you have region modded your NES)
+
 \*\* Not needed if U2 is a 28-pin UV EPROM.
 
 ### NROM
