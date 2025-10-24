@@ -293,6 +293,12 @@ Fixing this error involves adding ~100 ohm resistors (like these: https://mou.sr
 
 <img width="1652" height="728" alt="image" src="https://github.com/user-attachments/assets/18f7d2b8-eba8-4c1b-81b5-3a025fba5d4c" />
 
+## Considerations for v1.0
+
+On v1.0, mapper 79 and 148 are not supported. (That shouldn't affect most users)
+
+If you are using a 27C040 or 27C080 for the PRG ROM, you must bend up pin 1 before placing it into the PRG socket. Then, solder a wire from the bent-up pin and connect it to pin 31.
+
 ## Revision History
 
 ### v1.1 - Release
