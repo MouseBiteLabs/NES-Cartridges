@@ -141,7 +141,7 @@ If you use the 27C040 or 27C080, then you need to solder these pads on the back:
 
 <img width="378" height="390" alt="image" src="https://github.com/user-attachments/assets/05cf0442-3288-472b-af4b-4c99ec936df4" />
 
-And if your ROM chip is only 28 pins (like 27C256 and 27C512) you need to bend out pin 28 and solder it to the alternate hole labeled DIP28, shown here:
+If your ROM chip is only 28 pins (like 27C256 and 27C512, **or the original PRG Mask ROM if you are using the board as an NROM or CNROM replacement**) you need to bend out pin 28 and solder it to the alternate hole labeled DIP28, shown here:
 
 <img width="342" height="189" alt="image" src="https://github.com/user-attachments/assets/cc72bd8f-c0ff-49fc-848a-6b38212540eb" />
 
