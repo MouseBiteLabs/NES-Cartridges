@@ -29,7 +29,7 @@ There are a handful of more obscure mappers supported as well:
 
 ## For Replacing Damaged Circuit Boards
 
-This board can be used as a drop-in replacement for damaged original NES cartridge circuit boards - **but only for NROM and CNROM games**. This means you can take the chips off of the damaged circuit boards (assuming the chips are still in good condition) and solder them into this board. You may need to replace the capacitors if they are damaged.
+This board can be used as a drop-in replacement for damaged original NES cartridge circuit boards - **but only for NROM and CNROM games**. This means you can take the chips off of the damaged circuit boards (assuming the chips are still in good condition) and solder them into this board. You may need to replace the capacitors if they are damaged. **You still need to configure the board for the mapper you wish to use with the solder pads <a href="https://github.com/MouseBiteLabs/NES-Cartridges/tree/main/Discrete%20Logic%20Mappers#solder-jumpers">detailed in the section below</a>**.
 
 If you wish to use this board to replace damaged circuit boards for other mapper types (such as AxROM or UxROM), you can transfer over the logic chips and CIC, but will need to do some manual rewiring of the Mask ROM chips, which I will not be detailing in this repository. <a href="https://www.nesdev.org/wiki/Mask_ROM_pinout">Refer to this page on the Nesdev wiki</a> and cross-reference with <a href="https://github.com/MouseBiteLabs/NES-Cartridges/blob/main/Discrete%20Logic%20Mappers/schematic.pdf">board schematic</a> if you wish to figure it out for yourself. It will involve bending specific pins on the Mask ROM up so they are not inserted into the sockets on the board to be rewired elsewhere.
 
